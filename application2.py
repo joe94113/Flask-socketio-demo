@@ -26,6 +26,7 @@ def serverNotification():
     """
     while not thread_stop_event.isSet():
         # socket io server send data to client
+        # 發送"notify給前端"
         socketio.emit('notify', {'number': 0}, namespace='/channel')
         socketio.sleep(1)
 
